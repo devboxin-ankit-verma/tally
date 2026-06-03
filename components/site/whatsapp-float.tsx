@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { siteLinks, externalLinkAttrs } from '@/lib/site-links'
 import { WhatsAppIcon } from '@/components/site/whatsapp-icon'
 
@@ -32,19 +32,19 @@ export function WhatsAppFloat() {
   }
 
   return (
-    <motion.div
+    <m.div
       className="site-whatsapp-float"
       initial={{ opacity: 0, scale: 0.96, y: 6 }}
       animate={entered ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.96, y: 6 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
     >
-      <motion.div
+      <m.div
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.98 }}
         transition={{ duration: 0.2 }}
       >
         {button}
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   )
 }

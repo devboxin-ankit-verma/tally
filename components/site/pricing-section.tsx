@@ -1,11 +1,11 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { pricingPlans } from '@/lib/site-data'
 import { defaultViewport, staggerContainer, staggerItem, defaultTransition } from '@/lib/motion'
 import { Section } from '@/components/layout/section'
-import { SectionHeading } from '@/components/layout/section-heading'
-import { MotionWrapper } from '@/components/layout/motion-wrapper'
+import { AnimatedSectionHeading } from '@/components/motion/animated-section-heading'
+import { MotionCard } from '@/components/motion/motion-card'
 import { BrandButton } from '@/components/site/brand-button'
 import { cn } from '@/lib/utils'
 
@@ -14,14 +14,12 @@ export function PricingSection() {
 
   return (
     <Section id="pricing" variant="muted">
-      <MotionWrapper variant="fadeUp">
-        <SectionHeading
-          badge="Plans"
-          title="Pricing"
-          subtitle="Simple annual plans. Same features you trust — choose what fits your business."
-        />
-      </MotionWrapper>
-      <motion.div
+      <AnimatedSectionHeading
+        badge="Plans"
+        title="Pricing"
+        subtitle="Simple annual plans. Same features you trust — choose what fits your business."
+      />
+      <m.div
         className="site-content grid gap-8 md:grid-cols-2 lg:grid-cols-3"
         initial={reduced ? false : 'hidden'}
         whileInView="visible"
@@ -34,10 +32,18 @@ export function PricingSection() {
           const card = (
             <div
               className={cn(
-                'site-card-luxury flex h-full flex-col p-8 lg:p-10',
+                'site-card-luxury relative flex h-full flex-col p-8 lg:p-10',
                 plan.highlighted && 'site-pricing-highlight',
               )}
             >
+              {plan.highlighted && !reduced && (
+                <m.span
+                  className="pointer-events-none absolute inset-0 rounded-[inherit] ring-2 ring-[var(--site-brand)]/30"
+                  aria-hidden
+                  animate={{ opacity: [0.4, 0.75, 0.4] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                />
+              )}
               {plan.highlighted && 'badge' in plan && (
                 <div className="mb-6">
                   <span className="inline-flex rounded-full bg-[var(--site-brand)] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
@@ -78,18 +84,12 @@ export function PricingSection() {
           if (reduced) return <div key={plan.name}>{card}</div>
 
           return (
-            <motion.div
-              key={plan.name}
-              variants={staggerItem}
-              whileHover={{ y: plan.highlighted ? -8 : -6 }}
-              transition={{ duration: 0.35 }}
-              className="h-full"
-            >
-              {card}
-            </motion.div>
+            <m.div key={plan.name} variants={staggerItem} className="h-full">
+              <MotionCard>{card}</MotionCard>
+            </m.div>
           )
         })}
-      </motion.div>
+      </m.div>
     </Section>
   )
 }

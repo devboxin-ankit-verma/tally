@@ -1,23 +1,40 @@
 'use client'
 
-import { motion, type HTMLMotionProps, useReducedMotion } from 'framer-motion'
+import { m, type HTMLMotionProps, useReducedMotion } from 'framer-motion'
 import {
   defaultTransition,
   defaultViewport,
   fadeIn,
   fadeUp,
+  fadeUpLight,
+  fadeLeft,
+  fadeRight,
   scaleIn,
+  blurReveal,
   staggerContainer,
   staggerItem,
 } from '@/lib/motion'
 import { cn } from '@/lib/utils'
 
-type MotionVariant = 'fadeUp' | 'fadeIn' | 'scaleIn' | 'stagger' | 'staggerItem'
+type MotionVariant =
+  | 'fadeUp'
+  | 'fadeUpLight'
+  | 'fadeIn'
+  | 'scaleIn'
+  | 'blurReveal'
+  | 'fadeLeft'
+  | 'fadeRight'
+  | 'stagger'
+  | 'staggerItem'
 
 const variantsMap = {
   fadeUp,
+  fadeUpLight,
   fadeIn,
   scaleIn,
+  blurReveal,
+  fadeLeft,
+  fadeRight,
   stagger: staggerContainer,
   staggerItem,
 }
@@ -43,7 +60,7 @@ export function MotionWrapper({
   }
 
   return (
-    <motion.div
+    <m.div
       className={cn(className)}
       initial="hidden"
       whileInView={inView ? 'visible' : undefined}
@@ -54,8 +71,8 @@ export function MotionWrapper({
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }
 
-export { motion, staggerContainer, staggerItem, fadeUp, defaultViewport }
+export { m, staggerContainer, staggerItem, fadeUp, defaultViewport }

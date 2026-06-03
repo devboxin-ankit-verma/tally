@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { siteConfig } from '@/lib/site-config'
 import { externalLinkAttrs } from '@/lib/site-links'
 import { cn } from '@/lib/utils'
@@ -95,14 +95,14 @@ export function AppStoreBadges({
         if (reduced) return <div key={label}>{link}</div>
 
         return (
-          <motion.div
+          <m.div
             key={label}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
           >
             {link}
-          </motion.div>
+          </m.div>
         )
       })}
     </div>

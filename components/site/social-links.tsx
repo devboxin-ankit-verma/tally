@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { Facebook, Instagram } from 'lucide-react'
 import { siteLinks, externalLinkAttrs } from '@/lib/site-links'
 import { cn } from '@/lib/utils'
@@ -69,7 +69,7 @@ export function SocialLinks({
         }
 
         return (
-          <motion.span
+          <m.span
             key={label}
             role="listitem"
             whileHover={{ scale: 1.06, y: -1 }}
@@ -77,7 +77,7 @@ export function SocialLinks({
             transition={{ duration: 0.25 }}
           >
             {link}
-          </motion.span>
+          </m.span>
         )
       })}
     </div>

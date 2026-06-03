@@ -1,11 +1,11 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { whyTallyBridge } from '@/lib/site-data'
 import { defaultViewport, staggerContainer, staggerItem, defaultTransition } from '@/lib/motion'
 import { Section } from '@/components/layout/section'
-import { SectionHeading } from '@/components/layout/section-heading'
-import { MotionWrapper } from '@/components/layout/motion-wrapper'
+import { AnimatedSectionHeading } from '@/components/motion/animated-section-heading'
+import { MotionCard } from '@/components/motion/motion-card'
 import { IconBadge } from '@/components/site/icon-badge'
 
 export function WhyTallyBridgeSection() {
@@ -13,14 +13,12 @@ export function WhyTallyBridgeSection() {
 
   return (
     <Section>
-      <MotionWrapper variant="fadeUp">
-        <SectionHeading
-          badge="Value"
-          title="Why TallyBridge"
-          subtitle="Built for modern businesses that need Tally on phone — with automation, compliance, and control."
-        />
-      </MotionWrapper>
-      <motion.div
+      <AnimatedSectionHeading
+        badge="Value"
+        title="Why TallyBridge"
+        subtitle="Built for modern businesses that need Tally on phone — with automation, compliance, and control."
+      />
+      <m.div
         className="site-content grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8"
         initial={reduced ? false : 'hidden'}
         whileInView="visible"
@@ -44,17 +42,12 @@ export function WhyTallyBridgeSection() {
           if (reduced) return <div key={item.title}>{card}</div>
 
           return (
-            <motion.div
-              key={item.title}
-              variants={staggerItem}
-              whileHover={{ y: -4, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              {card}
-            </motion.div>
+            <m.div key={item.title} variants={staggerItem}>
+              <MotionCard>{card}</MotionCard>
+            </m.div>
           )
         })}
-      </motion.div>
+      </m.div>
     </Section>
   )
 }

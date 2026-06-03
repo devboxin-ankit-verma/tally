@@ -16,8 +16,8 @@ export function Section({
   ...props
 }: SectionProps) {
   const variants = {
-    default: 'bg-white',
-    muted: 'bg-[var(--site-muted)]',
+    default: 'bg-white/78 backdrop-blur-[3px]',
+    muted: 'bg-[var(--site-muted)]/82 backdrop-blur-[3px]',
     dark: 'bg-[var(--site-dark)] text-white',
   }
 

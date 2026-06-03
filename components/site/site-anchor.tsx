@@ -46,7 +46,7 @@ export function SiteAnchor({ href, className, children, onClick, ...props }: Sit
     return (
       <Link
         href={href}
-        className={cn(className)}
+        className={cn('cursor-pointer', className)}
         onClick={handleClick}
         {...(props as Omit<React.ComponentProps<typeof Link>, 'href'>)}
       >
@@ -56,7 +56,7 @@ export function SiteAnchor({ href, className, children, onClick, ...props }: Sit
   }
 
   return (
-    <a href={href} className={cn(className)} onClick={handleClick} {...props}>
+    <a href={href} className={cn('cursor-pointer', className)} onClick={handleClick} {...props}>
       {children}
     </a>
   )

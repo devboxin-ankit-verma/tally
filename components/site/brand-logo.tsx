@@ -4,7 +4,7 @@
 
 import { SiteAnchor } from '@/components/site/site-anchor'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 
 import { siteConfig } from '@/lib/site-config'
 
@@ -180,7 +180,7 @@ export function BrandLogo({
 
   return (
 
-    <motion.div
+    <m.div
 
       initial={{ opacity: 0, y: -8 }}
 
@@ -192,7 +192,7 @@ export function BrandLogo({
 
       {content}
 
-    </motion.div>
+    </m.div>
 
   )
 

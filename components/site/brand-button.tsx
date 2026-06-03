@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 type BrandButtonProps = React.ComponentProps<'button'> & {
@@ -19,7 +19,7 @@ export function BrandButton({
   const reduced = useReducedMotion()
 
   const base = cn(
-    'inline-flex min-h-11 items-center justify-center font-semibold',
+    'inline-flex min-h-11 cursor-pointer items-center justify-center font-semibold',
     'rounded-[var(--radius-btn)] transition-all duration-300 ease-out',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--site-brand)] focus-visible:ring-offset-2',
     'active:scale-[0.98]',
@@ -50,13 +50,13 @@ export function BrandButton({
   }
 
   return (
-    <motion.button
+    <m.button
       className={classes}
       whileHover={{ scale: 1.03, y: -1 }}
       whileTap={{ scale: 0.98 }}
       {...props}
     >
       {children}
-    </motion.button>
+    </m.button>
   )
 }

@@ -1,13 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import { m, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { Menu, X, Phone } from 'lucide-react'
 import { navLinks } from '@/lib/site-data'
 import { siteConfig } from '@/lib/site-config'
 import { siteLinks } from '@/lib/site-links'
-import { navTransition } from '@/lib/motion'
+import { navTransition, springGentle } from '@/lib/motion'
 import { BrandLogo } from '@/components/site/brand-logo'
+import { NavLinkMotion } from '@/components/motion/nav-link-motion'
 import { SiteAnchor } from '@/components/site/site-anchor'
 import { BrandButton } from '@/components/site/brand-button'
 import { cn } from '@/lib/utils'
@@ -47,23 +48,33 @@ export function Header() {
             : 'text-[var(--site-text-muted)] hover:bg-black/[0.04] hover:text-[var(--site-text)]',
         )}
       >
-        {label}
+        <NavLinkMotion isActive={isActive}>{label}</NavLinkMotion>
       </SiteAnchor>
     )
   }
 
   return (
-    <motion.header
+    <m.header
       className={cn(
-        'site-navbar fixed top-0 right-0 left-0 z-50 transition-all duration-400',
+        'site-navbar fixed top-0 right-0 left-0 z-50',
         scrolled ? 'site-glass-scrolled' : 'site-glass',
       )}
-      initial={reduced ? false : { opacity: 0, y: -12 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={reduced ? false : { opacity: 0, y: -16 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'blur(20px) saturate(180%)',
+      }}
       transition={navTransition}
     >
       <div className="site-container relative flex h-[72px] items-center">
-        <BrandLogo size="sm" animated={!reduced} className="relative z-10 shrink-0" />
+        <m.div
+          className="relative z-10 shrink-0"
+          animate={{ scale: scrolled ? 0.96 : 1 }}
+          transition={springGentle}
+        >
+          <BrandLogo size="sm" animated={!reduced} />
+        </m.div>
 
         {/* True viewport center — not offset by wider right actions */}
         <nav
@@ -112,7 +123,7 @@ export function Header() {
       <AnimatePresence>
         {mobileOpen && (
           <>
-            <motion.div
+            <m.div
               className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm lg:hidden"
               initial={reduced ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -120,7 +131,7 @@ export function Header() {
               onClick={closeMenu}
               aria-hidden
             />
-            <motion.nav
+            <m.nav
               className="site-glass fixed top-0 right-0 z-50 flex h-full w-[min(320px,90vw)] flex-col p-6 pt-24 lg:hidden"
               initial={reduced ? false : { x: '100%' }}
               animate={{ x: 0 }}
@@ -132,7 +143,7 @@ export function Header() {
                 <BrandLogo size="sm" />
               </div>
               {navLinks.map((link, i) => (
-                <motion.div
+                <m.div
                   key={link.href}
                   initial={reduced ? false : { opacity: 0, x: 12 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -145,7 +156,7 @@ export function Header() {
                 >
                   {link.label}
                 </SiteAnchor>
-                </motion.div>
+                </m.div>
               ))}
               <div className="mt-auto flex flex-col gap-3 border-t border-[var(--site-border)] pt-6">
                 <a href={siteLinks.tel} className="text-sm text-[var(--site-text-muted)]">
@@ -164,10 +175,10 @@ export function Header() {
                   </BrandButton>
                 </SiteAnchor>
               </div>
-            </motion.nav>
+            </m.nav>
           </>
         )}
       </AnimatePresence>
-    </motion.header>
+    </m.header>
   )
 }

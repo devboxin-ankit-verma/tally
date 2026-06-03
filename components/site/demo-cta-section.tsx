@@ -1,7 +1,7 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
-import { fadeUp, defaultTransition } from '@/lib/motion'
+import { m, useReducedMotion } from 'framer-motion'
+import { fadeUp, defaultTransition, springGentle } from '@/lib/motion'
 import { BrandButton } from '@/components/site/brand-button'
 import { siteConfig } from '@/lib/site-config'
 import { siteLinks } from '@/lib/site-links'
@@ -17,11 +17,16 @@ export function DemoCtaSection() {
         Book a Free Demo Today and see how {siteConfig.name} connects your business to Tally — anywhere.
       </p>
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <a href={siteLinks.contact}>
-          <BrandButton type="button" variant="dark" size="lg">
+        <m.a
+          href={siteLinks.contact}
+          whileHover={{ scale: 1.03, y: -2 }}
+          whileTap={{ scale: 0.98 }}
+          transition={springGentle}
+        >
+          <BrandButton type="button" variant="dark" size="lg" className="pointer-events-none">
             Book Demo
           </BrandButton>
-        </a>
+        </m.a>
         <a href={siteLinks.contact}>
           {reduced ? (
             <button
@@ -35,7 +40,7 @@ export function DemoCtaSection() {
               Contact Sales
             </button>
           ) : (
-            <motion.button
+            <m.button
               type="button"
               className={cn(
                 'inline-flex min-h-11 items-center justify-center gap-2.5 rounded-[var(--radius-btn)] px-9 py-4 text-base font-semibold',
@@ -48,7 +53,7 @@ export function DemoCtaSection() {
               transition={{ duration: 0.25 }}
             >
               Contact Sales
-            </motion.button>
+            </m.button>
           )}
         </a>
       </div>
@@ -59,7 +64,7 @@ export function DemoCtaSection() {
     <section className="site-demo-cta site-section" aria-label="Book a demo">
       <div className="site-demo-cta-mesh" aria-hidden />
       {!reduced && (
-        <motion.div
+        <m.div
           className="absolute top-1/4 left-1/4 size-64 rounded-full bg-white/10 blur-3xl"
           animate={{ y: [0, 20, 0], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
@@ -70,7 +75,7 @@ export function DemoCtaSection() {
         {reduced ? (
           content
         ) : (
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -78,7 +83,7 @@ export function DemoCtaSection() {
             transition={defaultTransition}
           >
             {content}
-          </motion.div>
+          </m.div>
         )}
       </div>
     </section>

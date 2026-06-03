@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { defaultViewport, fadeUp, defaultTransition } from '@/lib/motion'
 import { cn } from '@/lib/utils'
 
@@ -38,7 +38,7 @@ export function FeatureCard({ image, alt, title, description }: FeatureCardProps
   if (reduced) return card
 
   return (
-    <motion.div
+    <m.div
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}
@@ -48,6 +48,6 @@ export function FeatureCard({ image, alt, title, description }: FeatureCardProps
       className="h-full"
     >
       {card}
-    </motion.div>
+    </m.div>
   )
 }
