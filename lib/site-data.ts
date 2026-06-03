@@ -3,7 +3,7 @@ export const navLinks = [
   { href: '/#features', label: 'Features' },
   { href: '/#pricing', label: 'Pricing' },
   { href: '/#faq', label: 'FAQ' },
-  { href: '/about', label: 'About' },
+  { href: '/partner-with-us', label: 'Partner With Us' },
   { href: '/#contact', label: 'Contact' },
 ] as const
 
@@ -239,7 +239,7 @@ export const pricingPlans = [
     name: 'Basic',
     displayName: 'Growth',
     price: '₹3,000',
-    period: 'per year',
+    period: '/year',
     highlighted: false,
     features: [
       'Mobile App Access',
@@ -251,8 +251,8 @@ export const pricingPlans = [
   {
     name: 'Professional',
     displayName: 'Pro',
-    price: '₹5,000',
-    period: 'per year',
+    price: '₹416',
+    period: '/month',
     highlighted: true,
     badge: 'Most Popular',
     features: [
@@ -265,8 +265,8 @@ export const pricingPlans = [
   {
     name: 'Premium',
     displayName: 'Enterprise',
-    price: '₹7,000',
-    period: 'per year',
+    price: '₹583',
+    period: '/month',
     highlighted: false,
     features: [
       'All Pro Features',

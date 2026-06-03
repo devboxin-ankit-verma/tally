@@ -13,9 +13,9 @@ export const siteConfig = {
     url: 'https://developerbox.co.in',
   },
   contact: {
-    email: 'info@developerbox.in',
-    phone: '+91 91113 33253',
-    phoneDisplay: '+91 91113 33253',
+    email: 'info@developerbox.co.in',
+    phone: '+91 9111333243',
+    phoneDisplay: '+91 9111333243',
     address:
       '4th Floor SK Height, Near Shree Narayana Hospital, Devendra Nagar, Raipur, Chhattisgarh 492001',
     addressLines: [
@@ -26,7 +26,7 @@ export const siteConfig = {
     ],
     workingHours: '10:00 AM – 10:00 PM',
     /** WhatsApp without + prefix for wa.me */
-    whatsapp: '919111333253',
+    whatsapp: '919111333243',
   },
   social: {
     facebook: 'https://www.facebook.com/devboxin',

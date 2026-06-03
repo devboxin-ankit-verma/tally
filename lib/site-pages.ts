@@ -23,7 +23,7 @@ export const aboutPage = {
       heading: 'Why Developerbox Ai Factory',
       paragraphs: [
         'Developerbox Ai Factory is focused on practical business software — secure infrastructure, responsive support, and continuous improvements driven by customer feedback.',
-        'We are based in Noida, India, and serve businesses across the country with local support hours and clear, honest communication.',
+        'We are based in Raipur, India, and serve businesses across the country with local support hours and clear, honest communication.',
       ],
     },
   ],
@@ -59,7 +59,7 @@ export const privacyPolicyPage = {
     {
       heading: 'Your rights & contact',
       paragraphs: [
-        'You may request access, correction, or deletion of personal data we hold about you by contacting us at info@developerbox.in.',
+        'You may request access, correction, or deletion of personal data we hold about you by contacting us at info@developerbox.co.in.',
         'For questions about this Privacy Policy, reach us at the email above or via the contact section on our website.',
       ],
     },
@@ -96,7 +96,43 @@ export const termsPage = {
     {
       heading: 'Contact',
       paragraphs: [
-        'For questions about these Terms, contact us at info@developerbox.in or through the contact form on our website.',
+        'For questions about these Terms, contact us at info@developerbox.co.in or through the contact form on our website.',
+      ],
+    },
+  ],
+} as const
+
+export const partnerPage = {
+  badge: 'Partner',
+  title: 'Partner With Us',
+  intro:
+    'Join TallyBridge and grow your business by partnering with us. We are looking for resellers, integrators, and technology partners who share our vision of making business software accessible on mobile.',
+  sections: [
+    {
+      heading: 'Why Partner With TallyBridge',
+      paragraphs: [
+        'Partner with a fast-growing fintech platform trusted by thousands of businesses. Get dedicated support, attractive margins, and marketing resources to succeed.',
+        'Our partners benefit from continuous product innovation, a responsive team, and real opportunities to expand their service offerings.',
+      ],
+    },
+    {
+      heading: 'Partnership opportunities',
+      paragraphs: [
+        'We welcome resellers, system integrators, and technology partners. Whether you want to bundle TallyBridge with your services, integrate it into your platform, or resell it directly, we have a program for you.',
+        'Each partnership is tailored to your business model and market. Contact us to discuss your specific needs and opportunities.',
+      ],
+    },
+    {
+      heading: 'Support & resources',
+      paragraphs: [
+        'Dedicated account managers, partner portals, training, and marketing support to help you succeed.',
+        'Competitive pricing, tiered incentives, and co-marketing opportunities for qualified partners.',
+      ],
+    },
+    {
+      heading: 'Get started',
+      paragraphs: [
+        'Fill out the form below or email us at info@developerbox.co.in with details about your business and partnership interests. Our team will review your inquiry and reach out within 2 business days.',
       ],
     },
   ],

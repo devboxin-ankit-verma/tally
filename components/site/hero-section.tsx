@@ -84,31 +84,24 @@ export function HeroSection() {
         transition={springGentle}
       >
         <BrandButton type="button" size="lg" className="pointer-events-none w-full">
-          {heroContent.androidCta}
-        </BrandButton>
-      </m.a>
-      <m.a
-        href={siteConfig.apps.macAppStore}
-        {...externalLinkAttrs}
-        className="w-full"
-        whileHover={{ scale: 1.02, y: -2 }}
-        whileTap={{ scale: 0.98 }}
-        transition={springGentle}
-      >
-        <BrandButton type="button" variant="outline" size="lg" className="pointer-events-none w-full">
-          {heroContent.macCta}
+          DOWNLOAD CONNECTOR →
         </BrandButton>
       </m.a>
     </m.div>
   )
 
-  const platforms = (
-    <m.p
-      className="text-sm text-[var(--site-text-muted)]"
+  const subtitle = (
+    <m.div
+      className="flex flex-col gap-1 text-center max-w-xs"
       variants={heroLoadItem}
     >
-      Available on {heroContent.platforms.join(' · ')}
-    </m.p>
+      <p className="text-sm text-[var(--site-text-muted)]">
+        Get Started To View Your Business Data
+      </p>
+      <p className="text-sm text-[var(--site-text-muted)]">
+        Integrated with TallyPrime and Tally ERP9 *
+      </p>
+    </m.div>
   )
 
   const leftContent = (
@@ -119,7 +112,7 @@ export function HeroSection() {
         {description}
       </div>
       {ctas}
-      {platforms}
+      {subtitle}
     </div>
   )
 
@@ -171,18 +164,18 @@ export function HeroSection() {
               <div className="flex w-full max-w-xs flex-col gap-3">
                 <a href={siteConfig.apps.googlePlay} {...externalLinkAttrs} className="w-full">
                   <BrandButton type="button" size="lg" className="w-full">
-                    {heroContent.androidCta}
-                  </BrandButton>
-                </a>
-                <a href={siteConfig.apps.macAppStore} {...externalLinkAttrs} className="w-full">
-                  <BrandButton type="button" variant="outline" size="lg" className="w-full">
-                    {heroContent.macCta}
+                    DOWNLOAD CONNECTOR →
                   </BrandButton>
                 </a>
               </div>
-              <p className="text-sm text-[var(--site-text-muted)]">
-                Available on {heroContent.platforms.join(' · ')}
-              </p>
+              <div className="flex flex-col gap-1 text-center max-w-xs">
+                <p className="text-sm text-[var(--site-text-muted)]">
+                  Get Started To View Your Business Data
+                </p>
+                <p className="text-sm text-[var(--site-text-muted)]">
+                  Integrated with TallyPrime and Tally ERP9 *
+                </p>
+              </div>
             </div>
             {rightImage}
           </div>

@@ -15,8 +15,8 @@ const organizationJsonLd = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
-    telephone: '+91-9111333253',
-    email: 'info@developerbox.in',
+    telephone: '+91-9111333243',
+    email: 'info@developerbox.co.in',
     availableLanguage: 'English',
   },
 }
