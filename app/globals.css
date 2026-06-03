@@ -50,19 +50,19 @@
   --color-ring: var(--ring);
 }
 
-/* ─── TallyBridge Luxury Design System ─── */
+/* ─── MobileTally Modern SaaS Design System ─── */
 :root {
-  --site-brand: #6cd000;
-  --site-brand-dark: #4fa800;
-  --site-brand-glow: rgba(108, 208, 0, 0.35);
-  --site-dark: #001B5E;
-  --site-dark-elevated: #0a2180;
-  --site-text: #111111;
-  --site-text-muted: #5b6472;
-  --site-muted: #F5F7FA;
+  --site-brand: #22c55e;
+  --site-brand-dark: #16a34a;
+  --site-brand-glow: rgba(34, 197, 94, 0.25);
+  --site-dark: #0f172a;
+  --site-dark-elevated: #1e293b;
+  --site-text: #0f172a;
+  --site-text-muted: #64748b;
+  --site-muted: #f8fafc;
   --site-surface: #ffffff;
-  --site-border: rgba(0, 0, 0, 0.08);
-  --site-border-light: rgba(255, 255, 255, 0.08);
+  --site-border: rgba(0, 0, 0, 0.06);
+  --site-border-light: rgba(255, 255, 255, 0.1);
 
   --radius-btn: 14px;
   --radius-input: 16px;
@@ -86,7 +86,7 @@
     @apply text-foreground overflow-x-hidden antialiased;
     font-family: var(--font-geist-sans), system-ui, sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    background-color: #F5F7FA;
+    background-color: #f8fafc;
   }
 
   html:not(.site-ready) .site-app {
@@ -307,8 +307,8 @@
 }
 
 .site-input:focus {
-  border-color: rgba(108, 208, 0, 0.5);
-  box-shadow: 0 0 0 3px rgba(108, 208, 0, 0.12);
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
 }
 
 /* Hero */
@@ -317,9 +317,9 @@
   overflow: hidden;
   min-height: auto;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(108, 208, 0, 0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(108, 208, 0, 0.08) 0%, transparent 50%),
-    linear-gradient(180deg, rgba(250, 251, 252, 0.72) 0%, rgba(255, 255, 255, 0.78) 100%);
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(34, 197, 94, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(34, 197, 94, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(248, 250, 252, 0.8) 0%, rgba(255, 255, 255, 0.85) 100%);
 }
 
 @media (min-width: 1024px) {
@@ -343,7 +343,7 @@
   height: 480px;
   top: -120px;
   right: -80px;
-  background: rgba(108, 208, 0, 0.25);
+  background: rgba(34, 197, 94, 0.2);
 }
 
 .site-hero-orb-2 {
@@ -351,7 +351,7 @@
   height: 320px;
   bottom: 10%;
   left: -100px;
-  background: rgba(108, 208, 0, 0.15);
+  background: rgba(34, 197, 94, 0.12);
 }
 
 .site-hero-mockup-wrap {
@@ -364,8 +364,8 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(108, 208, 0, 0.22) 0%,
-    rgba(108, 208, 0, 0.08) 40%,
+    rgba(34, 197, 94, 0.18) 0%,
+    rgba(34, 197, 94, 0.06) 40%,
     transparent 70%
   );
   filter: blur(40px);
@@ -407,7 +407,7 @@
 .site-demo-cta {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #3d7a00 0%, var(--site-brand) 45%, #7ed321 100%);
+  background: linear-gradient(135deg, #15803d 0%, var(--site-brand) 45%, #4ade80 100%);
 }
 
 .site-demo-cta.site-section {
@@ -430,8 +430,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 35%);
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 35%);
   pointer-events: none;
 }
 
@@ -449,7 +449,7 @@
 
 /* Footer */
 .site-footer-luxury {
-  background: linear-gradient(180deg, #001B5E 0%, #000a2e 100%);
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
 }
 
 .site-footer-luxury a,
@@ -481,18 +481,19 @@
 }
 
 .site-whatsapp-btn {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
   box-shadow:
-    0 2px 8px rgba(15, 17, 23, 0.08),
-    0 8px 20px rgba(15, 17, 23, 0.1);
+    0 2px 8px rgba(34, 197, 94, 0.15),
+    0 8px 20px rgba(34, 197, 94, 0.2);
   transition: box-shadow 0.25s ease;
+  color: white;
 }
 
 .site-whatsapp-btn:hover {
   box-shadow:
-    0 6px 16px rgba(15, 17, 23, 0.1),
-    0 16px 36px rgba(15, 17, 23, 0.12);
+    0 6px 16px rgba(34, 197, 94, 0.25),
+    0 16px 36px rgba(34, 197, 94, 0.3);
 }
 
 @media (min-width: 768px) {
@@ -593,7 +594,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(108, 208, 0, 0.4), transparent 50%, rgba(108, 208, 0, 0.15));
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.3), transparent 50%, rgba(34, 197, 94, 0.1));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -621,7 +622,7 @@
 }
 
 .site-scroll-progress {
-  box-shadow: 0 0 12px rgba(108, 208, 0, 0.45);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
 }
 
 @media (prefers-reduced-motion: reduce) {

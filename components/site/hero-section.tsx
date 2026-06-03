@@ -17,7 +17,7 @@ import SplitText from '@/components/motion/split-text'
 import GradientText from '@/components/motion/gradient-text'
 import { HeroParallax } from '@/components/motion/hero-parallax'
 
-const heroGradientColors = ['#6cd000', '#7ed321', '#4fa800', '#6cd000', '#7ed321']
+const heroGradientColors = ['#22c55e', '#4ade80', '#16a34a', '#22c55e', '#4ade80']
 
 export function HeroSection() {
   const reduced = useReducedMotion()
